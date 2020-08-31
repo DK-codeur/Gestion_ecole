@@ -1149,6 +1149,11 @@ dt {
   .navbar-custom {
     margin-left: 0 !important;
   }
+
+  .account-page-full.wrapper-page {
+    width: 100%;
+    position: relative;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3667,5 +3672,31 @@ Invoice
   height: 2px;
   width: 100%;
   border-top: 1px dashed #ffffff;
+}
+
+
+
+.wrapper-page {
+  margin: 5.5% auto;
+  max-width: 492px;
+  position: relative;
+}
+
+.wrapper-page .logo-admin {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  margin: 0px auto;
+  width: 74px;
+  height: 74px;
+  line-height: 74px;
+  background: #ffffff;
+  border-radius: 50%;
+  border-bottom: 2px solid #02a499;
+}
+
+.account-card .account-card-content {
+  padding: 40px;
 }
 /*# sourceMappingURL=style.css.map */
