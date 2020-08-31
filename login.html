@@ -5,70 +5,87 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>WMC - Inscription | Admin</title>
-        <meta content="World Market Commodities" name="description" />
-        <meta content="WMC" name="Kouassi" />
-        <link rel="shortcut icon" href="assets/images/logoWMC-01.png">
-
-        <!-- DataTables -->
-        <link href="plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-        <!-- Responsive datatable examples -->
-        <link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />  
+        <title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
+        <meta content="Admin Dashboard" name="description" />
+        <meta content="Themesbrand" name="author" />
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css">
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="login.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
 
-        <!-- Begin page -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <form class="box">
-                            <h1>Se connecter</h1>
-                            <p class="text-muted"> Veuillez saisir votre identifiant et votre mot de passe!</p>
-                            <input type="text" name="" placeholder="Email">
-                            <input type="password" name="" placeholder="Mot de passe">
-                            
-                            <input type="submit" name="" value="Connexion" href="#">
-                            <div class="col-md-12">
-                                <ul class="social-network social-circle">
-                                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
-                                </ul>
+        <div class="home-btn d-none d-sm-block">
+            <a href="index.html" class="text-dark"><i class="fas fa-home h2"></i></a>
+        </div>
+        
+        <div class="wrapper-page">
+
+            <div class="card overflow-hidden account-card mx-3">
+                
+                <div class="bg-primary p-4 text-white text-center position-relative">
+                    <h4 class="font-20 m-b-5">Welcome Back !</h4>
+                    <p class="text-white-50 mb-4">Sign in to continue to Veltrix.</p>
+                    <a href="index.html" class="logo logo-admin"><img src="assets/images/logo-sm.png" height="24" alt="logo"></a>
+                </div>
+                <div class="account-card-content"> 
+
+                    <form class="form-horizontal m-t-30" action="index.html">
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userpassword">Password</label>
+                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            <div class="col-sm-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-sm-6 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20">
+                                <a href="pages-recoverpw.html"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
+
+            <div class="m-t-40 text-center">
+                <p>Don't have an account ? <a href="pages-register.html" class="font-500 text-primary"> Signup now </a> </p>
+                <p>© 2019 Veltrix. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+            </div>
+
         </div>
-        <!-- END wrapper -->
+        <!-- end wrapper-page -->
+
 
         <!-- jQuery  -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/metismenu.min.js"></script>
+        <script src="assets/js/metisMenu.min.js"></script>
         <script src="assets/js/jquery.slimscroll.js"></script>
         <script src="assets/js/waves.min.js"></script>
 
-        <!-- Datatable js -->
-        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-        <script src="plugins/datatables/dataTables.bootstrap4.min.js"></script>
-        <!-- Responsive examples -->
-        <script src="plugins/datatables/dataTables.responsive.min.js"></script>
-        <script src="plugins/datatables/responsive.bootstrap4.min.js"></script> 
-
-        <!-- Ecommerce Init -->
-        <script src="assets/pages/ecommerce.js"></script>        
-
         <!-- App js -->
         <script src="assets/js/app.js"></script>
-        
+
     </body>
 
 </html>
