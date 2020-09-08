@@ -17,15 +17,34 @@
                     $this->id = $id;
                     $this->nom = $data['nom'];
                 }
+               
+            //get all classe    
+            static function getAllClasse() {
+                global $db;
 
-            static function getAllClasse()
-                {
-                    global $db;
+                $req = $db ->prepare('SELECT * FROM classe');
+                $req->execute([]);
+                return $req->fetchAll();
+            }
 
-                    $req = $db ->prepare('SELECT * FROM classe');
-                    $req->execute([]);
-                    return $req->fetchAll();
-                }
+            //insert classe
+            static function insertClasse($nom) {
+                global $db;
+                
+                $req = $db->prepare('INSERT INTO `classe`(`nom`)
+                                        VALUES(?)      
+                                    ');
+                $req->execute([$nom]); 
+                
+            }
+
+            //find classe
+            static function findClasse($nom) {
+                global $db;
+                $req = $db->prepare('SELECT * FROM classe WHERE nom = ?');
+                $req->execute([$nom]);
+                return $req->fetch();
+            }
         }
 
 ?>

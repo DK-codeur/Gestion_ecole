@@ -37,33 +37,43 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-body">
+                                <div class="float-right"> 
+                                    <span class="niveauLive"></span><span class="numLive"></span> 
+                                </div>
+
                                     <div class="container mt-5">
                                         <div style="width: 70%; margin: auto;">
-                                            <form method="POST" action="#">
+                                            <form method="POST" action="">
                                                 <div class="form-group">
+                                                    <h5 class="text-warning "> <?=  $error ?> </h5>
+                                                    <br>
                                                     <label for="niveau">Niveau</label>
                                                     <select id="niveau" name="niveau" class="form-control">
                                                         <option value="">--Selectionner le niveau--</option>
                                                         
-                                                        <option value="">6ème</option>
-                                                        <option value="">5ème</option>
-                                                        <option value="">4ème</option>
-                                                        <option value="">3ème</option>
-                                                        <option value="">2nd</option>
-                                                        <option value="">1ère</option>
-                                                        <option value="">Tle</option>
+                                                        <option value="6eme">6eme</option>
+                                                        <option value="5eme">5eme</option>
+                                                        <option value="4eme">4eme</option>
+                                                        <option value="3eme">3eme</option>
+                                                        <option value="2ndA">2ndA</option>
+                                                        <option value="2ndC">2ndC</option>
+                                                        <option value="1ereA">1ereA</option>
+                                                        <option value="1ereC">1ereC</option>
+                                                        <option value="1ereD">1ereD</option>
+                                                        <option value="TleA">TleA</option>
+                                                        <option value="TleC">TleC</option>
+                                                        <option value="TleD">TleD</option>
                                                     </select>
+                                                    <small class="text-danger"> <?=  $niveauError ?> </small>
                                                 </div>
 
                                                 <div class="form-group ">
                                                     <label for="numerotation">Numerotation</label>
                                                     <input id="numerotation" name="numerotation" type="number" class="form-control">
+                                                    <small class="text-danger"> <?=  $numError ?> </small>
                                                 </div>
 
-                                                <div class="live">
-
-                                                </div>
-
+                                                
                                                 <div style="width: 60%; margin: auto">
                                                     <button type="submit" class="btn btn-primary btn-block">Enregister</button>
                                                 </div>
@@ -90,7 +100,27 @@
 </div>
 <!-- END wrapper -->
 
+
 <?php include_once 'views/includes/footer.php' ?>
+    
+<script>
+
+    let valInput = '';
+    let valInput2 = '';
+
+    $('#niveau').change(function() {
+        valInput = $(this).val();
+        $('.niveauLive').text('classe: ' + valInput);
+    })
+
+    $('#numerotation').keyup(function() {
+
+        valInput2 = $(this).val();
+        $('.numLive').text(valInput2) ;
+    });
+
+
+</script>
 
 </body>
 </html>
