@@ -110,14 +110,14 @@
                                         <?php  foreach($allStudent as $index => $student) : ?>
                                         <tr>
                                             <td><?=$student['matricule']?></td>
-                                            <td><?=$student['nom']?></td>
+                                            <td><a href=""><?=$student['nom']?></a></td>
                                             <td><?=$student['prenoms']?></td>
                                             <td><?=$student['sexe']?></td>
-                                            <td><?=$student['naissance']?></td>
+                                            <td><?=date_format(date_create($student['naissance']), "d-m-Y")?></td>
                                             <td><?=$student['classe']?></td>
                                             <td><?=$student['commune']?></td>
                                             <td><?=$student['telephone']?></td>
-                                            <td><a href="student-page" class="btn btn-outline-primary">voir+</a></td>
+                                            <td><a href="student-page-<?=$student['id_student']?>-<?=str_replace(' ','-', $student['nom']) ?>-<?=str_replace(' ','-', $student['prenoms']) ?>" class="btn btn-outline-primary">voir+</a></td>
                                         </tr>
                                         <?php  endforeach; ?>
 

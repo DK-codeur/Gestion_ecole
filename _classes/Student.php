@@ -60,15 +60,39 @@
         static function getStudentById($id) {
             global $db;
             $id = str_secure($id);
-            $req = $db->prepare('SELECT std.*, cl.nom AS class, com.nom AS commune 
-                                FROM student std
-                                INNER JOIN class cl ON cl.id_classe = std.id_student
-                                INNER JOIN commune com ON com.id_commune = std.id_student
-                                WHERE std.id_student = ?
+            $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
+                                FROM students stds
+                                INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                INNER JOIN commune com ON com.id_commune = stds.id_student
+                                WHERE stds.id_student = ?
                                 ');
             $req-> execute([$id]);
             return $req->fetch();
     
+        }
+
+         //get latest student
+         static function getLatestStudent() {
+            global $db;
+            $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
+                                 FROM students stds
+                                 INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                 INNER JOIN commune com ON com.id_commune = stds.id_student
+                                 ORDER BY id_student DESC
+                                 LIMIT 5
+                                ');
+            $req->execute([]);
+            return $req->fetchAll();
+        }
+
+        //verify student id
+        static function verifStudentId($id) {
+            global $db;
+            $id = str_secure($id);
+
+            $req = $db->prepare('SELECT * FROM students WHERE id_student = ?');
+            $req->execute([$id]);
+            return $req->fetch();
         }
 
         //insert student

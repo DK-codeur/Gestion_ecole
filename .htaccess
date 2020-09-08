@@ -13,6 +13,6 @@ RewriteRule ^new-class$ index.php?page=new-class
 RewriteRule ^effectif-par-niveau$ index.php?page=effectif-par-niveau
 
 
-#RewriteRule ^service-informatique$ index.php?page=service-informatique
+RewriteRule ^student-page-([0-9]+)-(.*)$ index.php?page=student-page&id=$1&std=$2
 
 

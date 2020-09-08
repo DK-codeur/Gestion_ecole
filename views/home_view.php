@@ -101,66 +101,19 @@
                                 <div class="table-responsive">
                                     <table class="table table-nowrap mb-0">
                                         <tbody>
+                                        <?php  foreach($latestStudent as $index => $latStudent) : ?>
                                             <tr>
-                                                <td><a href="#">Aka Kouassi</a></td>
-                                                <td>4ème 2</td>
-                                                <td>MZ885</td>
-                                                <td> <span class="text-muted"> inscrit le  </span> 24/08/2020</td>
+                                                <td><a href="#"><?=$latStudent['nom'].' '.$latStudent['prenoms']?></a></td>
+                                                <td><?=$latStudent['classe']?></td>
+                                                <td><?=$latStudent['matricule']?></td>
+                                                <td> <span class="text-muted"> inscrit le  </span> <?= date_format(date_create($latStudent['regAt']), "d-m-Y") ?></td>
                                                 <td>
                                                     <div>
-                                                        <a href="student-page" class="btn btn-primary btn-sm">voir+</a>
+                                                        <a href="student-page-<?=$latStudent['id_student']?>-<?=str_replace(' ','-', $latStudent['nom']) ?>-<?=str_replace(' ','-', $latStudent['prenoms']) ?>" class="btn btn-primary btn-sm">voir+</a>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            
-                                            <tr>
-                                                <td><a href="#">Boua Marcel</a></td>
-                                                <td>Tle C1</td>
-                                                <td>AZ478</td>
-                                                <td> <span class="text-muted"> inscrit le  </span> 22/08/2020</td>
-                                                <td>
-                                                    <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">voir+</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href="#">Brou Sekongo</a></td>
-                                                <td>5ème 1</td>
-                                                <td>MZ885</td>
-                                                <td> <span class="text-muted"> inscrit le  </span> 19/08/2020</td>
-                                                <td>
-                                                    <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">voir+</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href="#">Ble fani</a></td>
-                                                <td>3ème 3</td>
-                                                <td>LM854</td>
-                                                <td> <span class="text-muted"> inscrit le  </span> 24/08/2020</td>
-                                                <td>
-                                                    <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">voir+</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><a href="#">Seka Blaise</a></td>
-                                                <td>1ère A</td>
-                                                <td>RE563</td>
-                                                <td><span class="text-muted"> inscrit le  </span> 24/08/2020</td>
-                                                <td>
-                                                    <div>
-                                                        <a href="#" class="btn btn-primary btn-sm">voir+</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            
+                                        <?php endforeach ; ?>
                                         </tbody>
                                     </table>
                                 </div>
