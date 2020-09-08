@@ -1112,7 +1112,7 @@ dt {
   bottom: 0;
   text-align: center !important;
   padding: 19px 30px 20px;
-  position: absolute;
+  /* position: absolute; */
   background-color: #ffffff;
   right: 0;
   left: 240px;
@@ -3677,7 +3677,7 @@ Invoice
 
 
 .wrapper-page {
-  margin: 5.5% auto;
+  margin: 3.5% auto;
   max-width: 492px;
   position: relative;
 }

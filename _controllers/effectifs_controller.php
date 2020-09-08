@@ -1,0 +1,2 @@
+<?php
+$allStudent = Student::getAllStudent();

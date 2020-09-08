@@ -1,0 +1,18 @@
+DirectoryIndex index.php
+
+RewriteEngine on
+#RewriteRule ^([a-zA-Z0-9_\-]*)?/?$ index.php?&page=$1&%{QUERY_STRING}
+
+RewriteRule ^home$ index.php?page=home
+RewriteRule ^login$ index.php?page=login
+RewriteRule ^logout$ index.php?page=logout
+RewriteRule ^inscription$ index.php?page=inscription
+RewriteRule ^effectifs$ index.php?page=effectifs
+RewriteRule ^student-page$ index.php?page=student-page
+RewriteRule ^new-class$ index.php?page=new-class
+RewriteRule ^effectif-par-niveau$ index.php?page=effectif-par-niveau
+
+
+#RewriteRule ^service-informatique$ index.php?page=service-informatique
+
+
