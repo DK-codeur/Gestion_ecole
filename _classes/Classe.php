@@ -22,7 +22,11 @@
             static function getAllClasse() {
                 global $db;
 
-                $req = $db ->prepare('SELECT * FROM classe');
+                $req = $db ->prepare('SELECT * 
+                                      FROM classe 
+                                      ORDER BY nom 
+                                      DESC
+                                    ');
                 $req->execute([]);
                 return $req->fetchAll();
             }

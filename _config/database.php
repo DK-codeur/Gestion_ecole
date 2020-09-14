@@ -3,7 +3,7 @@ class Database
     {
         private static $dbHost = "localhost"; // 
         private static $dbName = "ges_ecole"; //c1443803c_ges_ecole
-        private static $dbUser = "root"; //gesecole_u
+        private static $dbUser = "root"; //c1443803c_gesecole_u
         private static $dbPass = ""; //XMlyrE[4oOLU
 
         private static $connection = null;

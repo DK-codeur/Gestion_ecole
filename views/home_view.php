@@ -46,7 +46,7 @@
                                     <i class="fa fa-users bg-soft-primary text-secondary float-right h4"></i>
                                 </div>
                                 <h6 class="text-uppercase mb-3 mt-0">EFFECTIFS <br> TOTAL</h6>
-                                <h5 class="mb-3 text-secondary">255</h5>
+                                <h5 class="mb-3 text-secondary"><?=$countAllStudents['total_student'] ?></h5>
                                 
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                     <i class="fa fa-user bg-soft-primary text-primary float-right h4"></i>
                                 </div>
                                 <h6 class="text-uppercase mb-3 mt-0">EFFECTIFS <br> GARCONS</h6>
-                                <h5 class="mb-3 text-primary">155</h5>
+                                <h5 class="mb-3 text-primary"><?= $countAllMen['total_men'] ?></h5>
                                 <!-- <p class="text-muted mb-0"><span class="text-success mr-2"> 33% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p> -->
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                                     <i class="fa fa-female bg-soft-primary text-danger float-right h4"></i>
                                 </div>
                                 <h6 class="text-uppercase mb-3 mt-0">EFFECTIF <br> FILLES</h6>
-                                <h5 class="mb-3 text-danger">100</h5>
+                                <h5 class="mb-3 text-danger"><?= $countAllWomen['total_women'] ?></h5>
                                 <!-- <p class="text-muted mb-0"><span class="text-success mr-2"> 33% <i class="mdi mdi-arrow-down"></i> </span> From previous period</p> -->
                             </div>
                         </div>

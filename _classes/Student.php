@@ -95,6 +95,40 @@
             return $req->fetch();
         }
 
+          //count all student
+          static function countAllStudent() {
+            global $db;
+
+            $req = $db->prepare('SELECT count(*) AS total_student FROM students');
+            $req->execute([]);
+            return $req->fetch();
+        }
+
+         //count all MEN
+         static function countAllMen() {
+            global $db;
+
+            $req = $db->prepare('SELECT count(*) AS total_men 
+                                 FROM students
+                                 WHERE sexe="M"
+                                ');
+            $req->execute([]);
+            return $req->fetch();
+        }
+
+        
+         //count all Wommen
+         static function countAllWomen() {
+            global $db;
+
+            $req = $db->prepare('SELECT count(*) AS total_women 
+                                 FROM students
+                                 WHERE sexe="F"
+                                ');
+            $req->execute([]);
+            return $req->fetch();
+        }
+
         //insert student
         static function insertStudent($nom, $prenoms, $naissance, $sexe, $matricule, $telephone, $id_classe, $id_commune) {
             global $db;
