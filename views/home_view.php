@@ -85,7 +85,7 @@
                                     <i class="fa fa-columns bg-soft-primary text-success float-right h4"></i>
                                 </div>
                                 <h6 class="text-uppercase mb-3 mt-0">CLASSE AU <br> TOTAL</h6>
-                                <h5 class="mb-3 text-success">13</h5>
+                                <h5 class="mb-3 text-success"><?= $countAllClasse['total_classe'] ?></h5>
                                 <!-- <p class="text-muted mb-0"><span class="text-success mr-2"> 33% <i class="mdi mdi-arrow-down"></i> </span> From previous period</p> -->
                             </div>
                         </div>

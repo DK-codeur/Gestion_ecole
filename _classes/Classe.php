@@ -31,6 +31,15 @@
                 return $req->fetchAll();
             }
 
+            //count all classe    
+            static function countAllClasse() {
+                global $db;
+
+                $req = $db ->prepare('SELECT count(*) AS total_classe FROM classe');
+                $req->execute([]);
+                return $req->fetch();
+            }
+
             //insert classe
             static function insertClasse($nom) {
                 global $db;

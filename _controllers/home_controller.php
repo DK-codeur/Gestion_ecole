@@ -4,3 +4,4 @@ isLogged();
     $countAllStudents = Student::countAllStudent();
     $countAllMen = Student::countAllMen();
     $countAllWomen = Student::countAllWomen();
+    $countAllClasse = Classe::countAllClasse();
