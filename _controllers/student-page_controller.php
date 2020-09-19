@@ -3,6 +3,8 @@
         $id = str_secure($_GET['id']);
     }
 
+    
+
     $foundStudent = Student::verifStudentId($id);
     
     if($foundStudent) {

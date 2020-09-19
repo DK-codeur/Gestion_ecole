@@ -15,7 +15,12 @@
             global $db;
             $id = str_secure($id);
 
-            $req = $db->prepare('SELECT * FROM students WHERE id_student = ?');
+            $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
+                                FROM students stds
+                                INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                INNER JOIN commune com ON com.id_commune = stds.id_student
+                                WHERE stds.id_student = ?
+                                ');
             $req->execute([$id]);
             $data = $req->fetch();
 
@@ -47,9 +52,9 @@
         static function getAllStudent() {
             global $db;
             $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
-                                    FROM students stds
-                                    INNER JOIN classe cl ON cl.id_classe = stds.id_student
-                                    INNER JOIN commune com ON com.id_commune = stds.id_student
+                                FROM students stds
+                                INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                INNER JOIN commune com ON com.id_commune = stds.id_student
                                 ');
             $req->execute([]);
             return $req->fetchAll();
@@ -127,6 +132,22 @@
                                 ');
             $req->execute([]);
             return $req->fetch();
+        }
+
+
+         //Effectif like Niveau
+         static function effectifLikeNiveau($likeClasse) {
+            global $db;
+            $likeClasse = str_secure($likeClasse);
+            $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
+                                 FROM students stds
+                                 INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                 INNER JOIN commune com ON com.id_commune = stds.id_student
+                                 WHERE classe LIKE ?%
+                                 ORDER BY stds.nom ASC
+                                ');
+            $req->execute([$likeClasse]);
+            return $req->fetchAll();
         }
 
         //insert student

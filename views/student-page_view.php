@@ -53,15 +53,20 @@
                                                         <div>Inscrit(e) le: <strong><?= date_format(date_create($studentById['regAt']), "d-m-Y H:i") ?></strong> </div>
                                                     </div>
                                                 </div>
-                                                
+                                                <hr>
                                             </div>
                                         </div>
         
                                         <div class="row mt-3">
                                             <div class="col-12">
                                                 <div>
-                                                    <div class="p-2">
-                                                        <h3 class="font-16"><strong>Historique de Paiement</strong></h3>
+                                                    <div class="row p-2">
+                                                        <div class="col-md-6">
+                                                            <h3 class="font-16"><strong>Historique de Paiement</strong></h3>
+                                                        </div>
+                                                        <div class="col-md-6 text-right">
+                                                            <button type="button" class="btn btn-danger waves-effect waves-light" data-toggle="modal" data-target=".bs-example-modal-sm">Payer scolarité</button>
+                                                        </div>
                                                     </div>
                                                     <div class="">
                                                         <div class="table-responsive">
@@ -113,6 +118,27 @@
 
 </div>
 <!-- END wrapper -->
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-0" id="mySmallModalLabel">Payer Scolarité</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <div class="modal-body px-3 pb-5">
+                    <p> <h6 class="text-success">Déjà Payer: 150 000 Fcfa</h6> </p>
+                    <p> <h6 class="text-danger">Reste à Payer: 50 000 Fcfa</h6> </p>
+                    <hr>
+                    <form action="" method="post">
+                        <label for="">Effectuer un Payement</label>
+                        <input type="text" class="form-control" name="" id="" placeholder="Entrer la somme à payer">
+                        <button class="btn btn-success btn-block my-2" type="submit">Payer</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 <?php include_once 'views/includes/footer.php' ?>
 

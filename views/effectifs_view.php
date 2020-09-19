@@ -110,7 +110,7 @@
                                         <?php  foreach($allStudent as $index => $student) : ?>
                                         <tr>
                                             <td><?=$student['matricule']?></td>
-                                            <td><a href=""><?=$student['nom']?></a></td>
+                                            <td><a href="student-page-<?=$student['id_student']?>-<?=str_replace(' ','-', $student['nom']) ?>-<?=str_replace(' ','-', $student['prenoms']) ?>"><?=strtoupper($student['nom'])?></a></td>
                                             <td><?=$student['prenoms']?></td>
                                             <td><?=$student['sexe']?></td>
                                             <td><?=date_format(date_create($student['naissance']), "d-m-Y")?></td>
