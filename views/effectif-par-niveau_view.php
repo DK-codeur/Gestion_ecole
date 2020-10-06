@@ -36,7 +36,7 @@
                     <div class="row align-items-center">
                         
                         <div class="col-sm-6">
-                            <h4 class="page-title">Effectif 6ème</h4>
+                            <h4 class="page-title">Effectif <?= $niv ?> </h4>
                         </div>
                     </div>
                 </div>
@@ -65,52 +65,19 @@
 
 
                                     <tbody>
+                                    <?php  foreach($effectifLikeNiveau as $index => $niveau) : ?>
                                         <tr>
-                                            <td>19001M</td>
-                                            <td>Attien</td>
-                                            <td>Marcial gustave</td>
-                                            <td>M</td>
-                                            <td>25/10/2002</td>
-                                            <td>6ème1</td>
-                                            <td>Plateau</td>
-                                            <td>24 02 02 55</td>
-                                            <td><a href="student-page" class="btn btn-outline-primary">voir+</a></td>
+                                            <td><?=$niveau['matricule']?></td>
+                                            <td><a href="student-page-<?=$niveau['id_student']?>-<?=str_replace(' ','-', $niveau['nom']) ?>-<?=str_replace(' ','-', $niveau['prenoms']) ?>"><?=strtoupper($niveau['nom'])?></a></td>
+                                            <td><?=$niveau['prenoms']?></td>
+                                            <td><?=$niveau['sexe']?></td>
+                                            <td><?=date_format(date_create($niveau['naissance']), "d-m-Y")?></td>
+                                            <td><?=$niveau['id_classe']?></td>
+                                            <td><?=$niveau['id_commune']?></td>
+                                            <td><?=$niveau['telephone']?></td>
+                                            <td><a href="student-page-<?=$niveau['id_student']?>-<?=str_replace(' ','-', $niveau['nom']) ?>-<?=str_replace(' ','-', $niveau['prenoms']) ?>" class="btn btn-outline-primary">voir+</a></td>
                                         </tr>
-
-                                        <tr>
-                                            <td>19001M</td>
-                                            <td>Attien</td>
-                                            <td>Marcial gustave</td>
-                                            <td>M</td>
-                                            <td>25/10/2002</td>
-                                            <td>6ème1</td>
-                                            <td>Plateau</td>
-                                            <td>24 02 02 55</td>
-                                            <td><a href="#" class="btn btn-outline-primary">voir+</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>19001M</td>
-                                            <td>Attien</td>
-                                            <td>Marcial gustave</td>
-                                            <td>M</td>
-                                            <td>25/10/2002</td>
-                                            <td>6ème1</td>
-                                            <td>Plateau</td>
-                                            <td>24 02 02 55</td>
-                                            <td><a href="#" class="btn btn-outline-primary">voir+</a></td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>19001M</td>
-                                            <td>Attien</td>
-                                            <td>Marcial gustave</td>
-                                            <td>M</td>
-                                            <td>25/10/2002</td>
-                                            <td>6ème1</td>
-                                            <td>Plateau</td>
-                                            <td>24 02 02 55</td>
-                                            <td><a href="#" class="btn btn-outline-primary">voir+</a></td>
-                                        </tr>
+                                        <?php  endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>

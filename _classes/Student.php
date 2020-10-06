@@ -35,21 +35,24 @@
             $this->id_commune = $data['id_commune'];
         }
 
-        // static function getAllStudent() {
-        //     global $db;
-        //     $req = $db->prepare('SELECT pu.*, us.nom, us.prenoms, cat.nom AS categorie, com.nom AS commune, of.nom AS offre  
-        //                             FROM pubs pu
-        //                             INNER JOIN categories cat ON cat.id_categorie = pu.id_categorie
-        //                             INNER JOIN offres of ON of.id_offre = pu.id_offre
-        //                             INNER JOIN users us ON us.id_user = pu.id_user
-        //                             INNER JOIN communes com ON com.id_commune = pu.id_commune
-        //                         ');
-        //     $req->execute([]);
-        //     return $req->fetchAll();
-        // }
+     
 
         //get all student
         static function getAllStudent() {
+            global $db;
+            $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
+                                FROM students stds
+                                INNER JOIN classe cl ON cl.id_classe = stds.id_student
+                                INNER JOIN commune com ON com.id_commune = stds.id_student
+                                ');
+            $req->execute([]);
+            return $req->fetchAll();
+        }
+
+        
+
+        //get all student
+        static function countStudentByLevel() {
             global $db;
             $req = $db->prepare('SELECT stds.*, cl.nom AS classe, com.nom AS commune 
                                 FROM students stds
@@ -157,6 +160,71 @@
                                     VALUES(?,?,?,?,?,?,?,?)
                                 ');
             $req->execute([$nom, $prenoms, $naissance, $sexe, $matricule, $telephone, $id_classe, $id_commune]);
+        }
+
+
+        //--------------------------------------------------------
+
+
+        //(select * from students) R: bse a classe name i unique in classe table also for commune
+        static function getAllStudentR() {
+            global $db;
+            $req = $db->prepare('SELECT * FROM students ORDER BY nom ASC');
+
+            $req->execute([]);
+            return $req->fetchAll();
+        }
+
+
+        // getLatestStudent R
+        static function getLatestStudentR() {
+            global $db;
+            $req = $db->prepare('SELECT * 
+                                 FROM students
+                                 ORDER BY id_student DESC
+                                 LIMIT 5
+                               ');
+            $req->execute([]);
+            return $req->fetchAll();
+        }
+
+
+        //getstudentbyid R
+        static function getStudentByIdR($id) {
+            global $db;
+            $id = str_secure($id);
+
+            $req = $db->prepare('SELECT * 
+                                 FROM students 
+                                 WHERE id_student = ?
+                                ');
+            $req-> execute([$id]);
+            return $req->fetch();
+        }
+
+        //Effectif like Niveau R
+        static function effectifLikeNiveauR($likeClasse) {
+            global $db;
+            $likeClasse = str_secure($likeClasse);
+            $req = $db->prepare('SELECT * 
+                                 FROM students 
+                                 WHERE id_classe LIKE ?
+                                 ORDER BY nom ASC
+                                ');
+            $req->execute([$likeClasse.'%']);
+            return $req->fetchAll();
+        }
+
+        //countEffectifLikeNiveau R
+        static function CountEffectifLikeNiveauR($likeClasse) {
+            global $db;
+            $likeClasse = str_secure($likeClasse);
+            $req = $db->prepare('SELECT count(*) as niveau 
+                                 FROM students  
+                                 WHERE id_classe LIKE ?
+                                ');
+            $req->execute([$likeClasse.'%']);
+            return $req->fetch();
         }
         
                 

@@ -10,9 +10,11 @@ RewriteRule ^inscription$ index.php?page=inscription
 RewriteRule ^effectifs$ index.php?page=effectifs
 RewriteRule ^student-page$ index.php?page=student-page
 RewriteRule ^new-class$ index.php?page=new-class
+RewriteRule ^new-commune$ index.php?page=new-commune
 RewriteRule ^effectif-par-niveau$ index.php?page=effectif-par-niveau
 
 
 RewriteRule ^student-page-([0-9]+)-(.*)$ index.php?page=student-page&id=$1&std=$2
+RewriteRule ^effectif-par-niveau-(.*)$ index.php?page=effectif-par-niveau&niv=$1
 
 

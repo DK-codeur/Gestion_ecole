@@ -98,14 +98,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <h4 class="mt-0 header-title mb-4">Dernière inscription</h4>
+                                <h6 class="mb-3 text-primary text-center"><?=$countAllStudents['total_student'] == 0 ? 'Pas d\'eleve inscrit': '' ?></h6>
                                 <div class="table-responsive">
                                     <table class="table table-nowrap mb-0">
                                         <tbody>
                                         <?php  foreach($latestStudent as $index => $latStudent) : ?>
                                             <tr>
-                                                <td><a href="#"><?=$latStudent['nom'].' '.$latStudent['prenoms']?></a></td>
-                                                <td><?=$latStudent['classe']?></td>
-                                                <td><?=$latStudent['matricule']?></td>
+                                                <td><a href="student-page-<?=$latStudent['id_student']?>-<?=str_replace(' ','-', $latStudent['nom']) ?>-<?=str_replace(' ','-', $latStudent['prenoms']) ?>"><?=$latStudent['nom'].' '.$latStudent['prenoms']?></a></td>
+                                                <td><?=$latStudent['id_classe']?></td>
                                                 <td> <span class="text-muted"> inscrit le  </span> <?= date_format(date_create($latStudent['regAt']), "d-m-Y") ?></td>
                                                 <td>
                                                     <div>
@@ -144,7 +144,7 @@
     <div class="slimscroll-menu">
         <div class="px-4 pt-4 mt-5">
             <div class="mb-4">
-                <h5 class="font-14">Calender</h5>
+                <h5 class="font-14">Calendrier</h5>
 
                 <div class="dashboard-date-pick" id="date-pick-widget" data-provide="datepicker-inline"></div>
             </div>

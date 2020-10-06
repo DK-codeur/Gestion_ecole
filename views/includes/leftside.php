@@ -21,6 +21,10 @@
                             <li>
                                 <a href="new-class" class="waves-effect waves-light"><i class="ion ion-md-clipboard"></i><span>Nouvelle Classe</span></a>
                             </li>
+
+                            <li>
+                                <a href="new-commune" class="waves-effect waves-light"><i class="ion ion-md-clipboard"></i><span>Nouvelle commune</span></a>
+                            </li>
                             <!-- <li>
                                 <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-book"></i><span> Niveau <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                                 <ul class="submenu">

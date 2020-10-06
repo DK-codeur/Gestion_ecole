@@ -9,7 +9,7 @@
     
     if($foundStudent) {
 
-        $studentById = Student::getStudentById($id);
+        $studentById = Student::getStudentByIdR($id);
 
     } else {
         header('location:home');

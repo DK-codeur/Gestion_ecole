@@ -43,7 +43,7 @@
 
         static function getEmailPass($email, $pass) {
             global $db; 
-            $req = $db->prepare('SELECT * FROM  users WHERE email = ? AND pass = ?');
+            $req = $db->prepare('SELECT * FROM  user WHERE email = ? AND pass = ?');
             $req->execute([$email,$pass]);  
             return $req->fetch();
 

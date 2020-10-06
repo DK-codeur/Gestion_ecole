@@ -1,4 +1,6 @@
 <?php
+$allClasse = Classe::getAllClasse();
+$countAllClasse = Classe::countAllClasse();
 
     $niveauError = $numError = $error = "";
     $niveau = $num = '';
@@ -40,6 +42,8 @@
                         echo '</script>';
     
                         $niveau = $num = '';
+
+                        header('refresh:2;');
                     }
                     
 

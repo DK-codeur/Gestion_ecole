@@ -47,8 +47,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-6 text-right">
-                                                        <div>Classe: <strong><?=$studentById['classe']?></strong> </div>
-                                                        <div>Commune: <strong><?=$studentById['commune']?></strong> </div>
+                                                        <div>Classe: <strong><?=$studentById['id_classe']?></strong> </div>
+                                                        <div>Commune: <strong><?=$studentById['id_commune']?></strong> </div>
                                                         <div>Tel. Parent: <strong><?=$studentById['telephone']?></strong> </div>
                                                         <div>Inscrit(e) le: <strong><?= date_format(date_create($studentById['regAt']), "d-m-Y H:i") ?></strong> </div>
                                                     </div>

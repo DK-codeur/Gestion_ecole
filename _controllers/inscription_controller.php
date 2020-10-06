@@ -9,14 +9,14 @@ isLogged();
 
     if( isset($_POST) && !empty($_POST))
         {
-            $nom       = verifInput($_POST['nom']);
-            $prenoms   = verifInput($_POST['prenoms']);
-            $naissance = verifInput($_POST['naissance']);
-            $sexe      = verifInput($_POST['sexe']);
-            $matricule = verifInput($_POST['matricule']);
-            $telephone = verifInput($_POST['telephone']);
-            $id_classe    = verifInput($_POST['classe']);
-            $id_commune   = verifInput($_POST['commune']);
+            $nom        = verifInput($_POST['nom']);
+            $prenoms    = verifInput($_POST['prenoms']);
+            $naissance  = verifInput($_POST['naissance']);
+            $sexe       = verifInput($_POST['sexe']);
+            $matricule  = verifInput($_POST['matricule']);
+            $telephone  = verifInput($_POST['telephone']);
+            $id_classe  = verifInput($_POST['classe']);
+            $id_commune = verifInput($_POST['commune']);
 
             $isSuccess = true;
 
@@ -87,8 +87,8 @@ isLogged();
                     echo '<script language="javascript">';
                     echo 'alert("Inscription effectuée Avec succès")';
                     echo '</script>';
-                    // header('refresh:3;url=login');
                     $nom = $prenoms = $naissance = $sexe  = $matricule  = $telephone = $id_classe = $id_commune = "";
+                    header('refresh:1;');
                 }
 
         }

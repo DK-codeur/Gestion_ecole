@@ -45,7 +45,7 @@
                 global $db;
                 
                 $req = $db->prepare('INSERT INTO `classe`(`nom`)
-                                        VALUES(?)      
+                                     VALUES(?)      
                                     ');
                 $req->execute([$nom]); 
                 

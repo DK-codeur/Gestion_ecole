@@ -52,24 +52,24 @@
                                     <table class="table table-bordered mb-0">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th scope="col"><a href="effectif-par-niveau">6ème</a></th>
-                                                <th scope="col">5ème</th>
-                                                <th scope="col">4ème</th>
-                                                <th scope="col">3ème</th>
-                                                <th scope="col">2nd</th>
-                                                <th scope="col">1ème</th>
-                                                <th scope="col">Tle</th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='6eme'?>">6ème</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='5eme'?>">5ème</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='4eme'?>">4ème</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='3eme'?>">3ème</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='2nd'?>">2nd</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='1ere'?>">1ere</a></th>
+                                                <th scope="col"><a href="effectif-par-niveau-<?='Tle'?>">Tle</a></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="effectifs">
-                                                <td><a href="effectif-par-niveau">69</a></td>
-                                                <td><a href="#">24</a></td>
-                                                <td><a href="#">22</a></td>
-                                                <td><a href="#">35</a></td>
-                                                <td><a href="#">33</a></td>
-                                                <td><a href="#">29</a></td>
-                                                <td><a href="#">41</a></td>
+                                            <td><a href="effectif-par-niveau-<?='6eme'?>"><?= $count_6eme['niveau'] ?></a></td>
+                                                <td><a href=""><?= $count_5eme['niveau'] ?></a></td>
+                                                <td><a href="#"><?= $count_4eme['niveau'] ?></a></td>
+                                                <td><a href="#"><?= $count_3eme['niveau'] ?></a></td>
+                                                <td><a href="effectif-par-niveau-<?='2nd'?>"><?= $count_2nd['niveau'] ?></a></td>
+                                                <td><a href="#"><?= $count_1ere['niveau'] ?></a></td>
+                                                <td><a href="#"><?= $count_Tle['niveau'] ?></a></td>
                                                 
                                             </tr>
                                         </tbody>
@@ -114,8 +114,8 @@
                                             <td><?=$student['prenoms']?></td>
                                             <td><?=$student['sexe']?></td>
                                             <td><?=date_format(date_create($student['naissance']), "d-m-Y")?></td>
-                                            <td><?=$student['classe']?></td>
-                                            <td><?=$student['commune']?></td>
+                                            <td><?=$student['id_classe']?></td>
+                                            <td><?=$student['id_commune']?></td>
                                             <td><?=$student['telephone']?></td>
                                             <td><a href="student-page-<?=$student['id_student']?>-<?=str_replace(' ','-', $student['nom']) ?>-<?=str_replace(' ','-', $student['prenoms']) ?>" class="btn btn-outline-primary">voir+</a></td>
                                         </tr>
