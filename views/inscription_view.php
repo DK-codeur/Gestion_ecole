@@ -73,7 +73,7 @@
                                                             <div class="form-group">
                                                                 <label for="naissance">Date de naissance</label>
                                                                 <input id="naissance" name="naissance" type="date" class="form-control" value="<?=$naissance?>">
-                                                                <small class="text-danger"> <?=  $naissanceErrror ?> </small>
+                                                                <small class="text-danger"> <?=  $naissanceError ?> </small>
                                                             </div>
                                                         </div>
 
@@ -82,8 +82,8 @@
                                                                 <label for="sexe">Sexe</label>
                                                                 <select id="sexe" name="sexe" class="form-control">
                                                                     <option value="">--Selectionner le genre--</option>
-                                                                    <option value="M">Masculin </option>
-                                                                    <option value="F">Feminin</option>
+                                                                    <option <?= $sexe === 'M' ? 'selected' : ''?> value="M">Masculin </option>
+                                                                    <option <?= $sexe === 'F' ? 'selected' : ''?> value="F">Feminin</option>
                                                                 </select>
                                                                 <small class="text-danger"> <?=  $sexeError ?> </small>
                                                             </div>
@@ -96,11 +96,11 @@
                                                                 <label for="classe">classe</label>
                                                                 <select id="classe" name="classe" class="form-control">
                                                                     <option value="">--Selectionner la classe--</option>
+                                                                    
                                                                     <?php  foreach ($allClasse as $index => $classe) : ?>
-
-                                                                    <option value="<?=$classe['nom']?>"> <?=$classe['nom'] ?> </option>
-
+                                                                        <option <?= $id_classe === $classe['nom'] ? 'selected' : '' ?> value="<?=$classe['nom']?>"> <?=$classe['nom'] ?> </option>
                                                                     <?php  endforeach; ?>
+                                                                    
                                                                 </select>
                                                                 <small class="text-danger"> <?=  $classeError ?> </small>
                                                             </div>
@@ -125,7 +125,7 @@
                                                                     <option value="">--Selectionner la commune--</option>
                                                                     <?php  foreach ($allCommune as $index => $commune) : ?>
 
-                                                                    <option value="<?=$commune['nom']?>" > <?=$commune['nom'] ?> </option>
+                                                                    <option <?= $id_commune === $commune['nom'] ? 'selected' : '' ?> value="<?=$commune['nom']?>" > <?=$commune['nom'] ?> </option>
 
                                                                     <?php  endforeach; ?>
                                                                 </select>

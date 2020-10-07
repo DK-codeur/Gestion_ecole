@@ -5,16 +5,16 @@
         // exit();
     }
     
-    $effectifLikeNiveau = Student::effectifLikeNiveauR($niv);
+    $VerifyNiveau = Student::effectifLikeNiveauR($niv);
     
 
     // $foundStudent = Student::verifStudentId($id);
     
-    // if($foundStudent) {
+    if($VerifyNiveau) {
 
-    //     $studentById = Student::getStudentByIdR($id);
+        $effectifLikeNiveau = Student::effectifLikeNiveauR($niv);
 
-    // } else {
-    //     header('location:home');
-    //     exit();
-    // }
+    } else {
+        header('location:home');
+        exit();
+    }
